@@ -1,0 +1,1012 @@
+{
+	"info": {
+		"_postman_id": "a9a7f81c-e5e1-4b22-b120-27b4a5548997",
+		"name": "APROSE_Integration Tests",
+		"description": "Tests around AProse Integration requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestOnlyEvents",
+			"item": [
+				{
+					"name": "SMInstallation_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": 0,\r\n  \"meterDetails\": {\r\n    \"importMeterPointId\": 0,\r\n    \"secondaryImportMeterPointId\": 0,\r\n    \"exportMeterPointId\": 0\r\n  },\r\n  \"installationDate\": \"2018-09-12T10:34:00.979Z\",\r\n  \"ProductVersionId\": 0\r\n}"
+						},
+						"url": {
+							"raw": "/Smart/Events/Test/SmartMeterInstallation",
+							"path": [
+								"Smart",
+								"Events",
+								"Test",
+								"SmartMeterInstallation"
+							]
+						},
+						"description": "Simulate a smart meter installation request"
+					},
+					"response": []
+				},
+				{
+					"name": "CosGain_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"accountId\": 1501,\n  \"dateOfGain\": \"2018-09-18T10:37:53.434Z\",\n  \"meterDetails\": {\n    \"importMeterPointId\":12345,\n    \"secondaryImportMeterPointId\": 1234,\n    \"exportMeterPointId\": 1234\n  },\n  \"productVersionId\": 0\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Test/CosGain",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Test",
+								"CosGain"
+							]
+						},
+						"description": "Simulate a COS gain request\n\nExample Body :\n\n{\n  \"accountId\": 1234,\n  \"dateOfGain\": \"2018-09-18T10:37:53.434Z\",\n  \"meterDetails\": {\n    \"importMeterPointId\":2000056392675,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  },\n  \"productVersionId\": 0\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "CosLoss_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": 1123315,\r\n  \"dateOfLoss\": \"2018-09-20T10:39:01.418Z\",\r\n  \"smartMeterDetails\": {\r\n    \"deviceId\": \"CosLOSS\",\r\n    \"importMeterPointId\": 0,\r\n    \"secondaryImportMeterPointId\": 0,\r\n    \"exportMeterPointId\": 0\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Test/CosLoss",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Test",
+								"CosLoss"
+							]
+						},
+						"description": "Simulate a COS Loss request"
+					},
+					"response": []
+				},
+				{
+					"name": "Cot_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": 1123314,\r\n  \"CotDate\": \"2018-09-21T10:39:40.249Z\",\r\n  \"smartMeterDetails\": {\r\n    \"deviceId\": \"string\",\r\n    \"importMeterPointId\": 888,\r\n    \"secondaryImportMeterPointId\": 888,\r\n    \"exportMeterPointId\": 888\r\n  },\r\n  \"productVersionId\": 0\r\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Test/Cot",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Test",
+								"Cot"
+							]
+						},
+						"description": "Simulate a COT request"
+					},
+					"response": []
+				},
+				{
+					"name": "MeterRead_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\":1123313,\r\n  \"smartMeterDetails\": {\r\n    \"deviceId\": \"string\",\r\n    \"importMeterPointId\": 0,\r\n    \"secondaryImportMeterPointId\": 0,\r\n    \"exportMeterPointId\": 0\r\n  },\r\n  \"readDate\": \"2018-09-12T10:41:12.308Z\"\r\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/MeterRead",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"MeterRead"
+							]
+						},
+						"description": "Simulate a meter read request"
+					},
+					"response": []
+				},
+				{
+					"name": "WanAvailability_Simulate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountId\": 1500\r\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Test/WanAvailability",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Test",
+								"WanAvailability"
+							]
+						},
+						"description": "Simulate a WAN availability request"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Events",
+			"item": [
+				{
+					"name": "Delete_Event_Queue",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/9a98c652-7c2f-47d8-9dc7-7abe90c68c1d",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"9a98c652-7c2f-47d8-9dc7-7abe90c68c1d"
+							]
+						},
+						"description": "cknowledges and removes an event\n\nExampled Response :\n\n{}"
+					},
+					"response": []
+				},
+				{
+					"name": "Next Events",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b73bab25-5e31-4e85-a92e-7200287580e6",
+								"type": "text/javascript",
+								"exec": [
+									"tests['Status Code is 200'] = (responseCode.code ===200);",
+									"",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Next",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Next"
+							]
+						},
+						"description": "This Request is used to Find the what's next in Outbound queue, we need to Delete [DELETE _Event] this Event to view the NEXT one.\n\nResponse Example :\n\n{\n  \"eventId\": \"string\",\n  \"subject\": \"SmartMeterInstallation\"\n}"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c14ea80a-801a-43ad-abc5-3912ded25b41",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1ec74be-a26b-4262-ada0-9abb08760dac",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "MeterReadEvents",
+			"item": [
+				{
+					"name": "MeterRead_Event[GetDetails]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/MeterRead/256c263d-ddea-4160-b790-1917a64e6cb5",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"MeterRead",
+								"256c263d-ddea-4160-b790-1917a64e6cb5"
+							]
+						},
+						"description": "Gets the meter read request event\n\nExample Response :\n\n{\n  \"accountId\": 0,\n  \"smartMeterDetails\": {\n    \"deviceId\": \"string\",\n    \"importMeterPointId\": 0,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  },\n  \"readDate\": \"2018-09-12T10:54:45.740Z\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "MeterRead_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/MeterRead/{eventId}/Success",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"MeterRead",
+								"{eventId}",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek that a meter read is Complete\n\nBodyExpected:\n{\n  \"deviceId\": \"string\",\n  \"readDateTime\": \"2018-09-12T09:24:12.376Z\",\n  \"primaryActivePowerRegisterReads\": [\n    {\n      \"value\": 0\n    }\n  ],\n  \"primaryGasImportRegisterReads\": [\n    {\n      \"value\": 0\n    }\n  ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "MeterRead_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/MeterRead/{eventId}/Failure",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"MeterRead",
+								"{eventId}",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek that a meter read has failed\n\nBody Expected :\n{\n  \"meterReadRequestEventId\": \"string\",\n  \"failureDetails\": \"string\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "MeterRead_ScheduledRead",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/MeterRead/ScheduledRead",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"MeterRead",
+								"ScheduledRead"
+							]
+						},
+						"description": "Notify Ensek that of a meter read alert\n\nBody Expected :\n{\n  \"deviceId\": \"string\",\n  \"readDateTime\": \"2018-09-12T10:53:50.868Z\",\n  \"primaryActivePowerRegisterReads\": [\n    {\n      \"value\": 0\n    }\n  ],\n  \"primaryGasImportRegisterReads\": [\n    {\n      \"value\": 0\n    }\n  ]\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get_AccountId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Accounts/{accountId}",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Accounts",
+								"{accountId}"
+							]
+						},
+						"description": "Retrieve information for an account\n\nResponse Example :\n\n{\n  \"name\": \"string\",\n  \"siteAddress\": {\n    \"uprn\": \"string\",\n    \"subBuildingNameNumber\": \"string\",\n    \"buildingNameNumber\": \"string\",\n    \"dependentThoroughfare\": \"string\",\n    \"thoroughfare\": \"string\",\n    \"locality\": \"string\",\n    \"dependentyLocality\": \"string\",\n    \"doubleDependentyLocality\": \"string\",\n    \"county\": \"string\",\n    \"postCode\": \"string\",\n    \"additionalInformation\": \"string\",\n    \"fullAddress\": \"string\"\n  }\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_MeterPoints",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Accounts/{accountId}/MeterPoints",
+							"path": [
+								"Smart",
+								"Accounts",
+								"{accountId}",
+								"MeterPoints"
+							]
+						},
+						"description": "Retrieve meter point information for an account\n\nResponse Example :\n\n[\n  {\n    \"meterPointId\": 0\n  }\n]"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AlertEvent",
+			"item": [
+				{
+					"name": "AlertEvents",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/Alert",
+							"path": [
+								"Smart",
+								"Events",
+								"Alert"
+							]
+						},
+						"description": "Raises an alert within the Ensek CRM.\n\nResponse_Body Expected :\n\n{\n  \"category\": \"string\",\n  \"code\": \"string\",\n  \"accountId\": 0,\n  \"deviceId\": \"string\",\n  \"eventIdentifier\": \"string\",\n  \"details\": \"string\"\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CosGainEvents",
+			"item": [
+				{
+					"name": "CosGain_EventRequest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosGain/256c263d-ddea-4160-b790-1917a64e6cb5",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosGain",
+								"256c263d-ddea-4160-b790-1917a64e6cb5"
+							]
+						},
+						"description": "Gets the COS gain request event\n\nResponse Sample :\n\n{\n  \"accountId\": 0,\n  \"dateOfGain\": \"2018-09-12T11:01:49.667Z\",\n  \"meterDetails\": {\n    \"importMeterPointId\": 0,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  },\n  \"productVersionId\": 0\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "CosGain_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"devicesGained\": [\n    {\n      \"deviceId\": \"string\",\n      \"accountId\": 0,\n      \"deviceType\": \"Esme\",\n      \"status\": \"Pending\",\n      \"primaryImportMpan\": \"string\",\n      \"secondaryImportMpan\": \"string\",\n      \"exportMpan\": \"string\",\n      \"ImportMprn\": \"string\",\n      \"hanVariation\": \"SingleBand\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosGain/2c2a4127-2a87-410f-a67b-a661175ad0f9/Success",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosGain",
+								"2c2a4127-2a87-410f-a67b-a661175ad0f9",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek that a COS gain is complete\n\nResponse Body Expected :\n\n{\n  \"devicesGained\": [\n    {\n      \"deviceId\": \"string\",\n      \"accountId\": 0,\n      \"deviceType\": \"Esme\",\n      \"status\": \"Pending\",\n      \"primaryImportMpan\": \"string\",\n      \"secondaryImportMpan\": \"string\",\n      \"exportMpan\": \"string\",\n      \"ImportMprn\": \"string\",\n      \"hanVariation\": \"SingleBand\"\n    }\n  ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "CosGain_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"failureDetails\": \"string\"\n}"
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosGain/{eventId}/Failure",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosGain",
+								"{eventId}",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek that a COS gain has failed.\n\nResponse Body Expected :\n\n{\n  \"failureDetails\": \"string\"\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CosLossEvents",
+			"item": [
+				{
+					"name": "CosLoss_EventRequest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosLoss/256c263d-ddea-4160-b790-1917a64e6cb5",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosLoss",
+								"256c263d-ddea-4160-b790-1917a64e6cb5"
+							]
+						},
+						"description": "Gets the COS loss request event\n\nResponse Sample :\n\n{\n  \"accountId\": 0,\n  \"dateOfLoss\": \"2018-09-12T11:01:16.264Z\",\n  \"smartMeterDetails\": {\n    \"deviceId\": \"string\",\n    \"importMeterPointId\": 0,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  }\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "CosLoss_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosLoss/256c263d-ddea-4160-b790-1917a64e6cb5/Success",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosLoss",
+								"256c263d-ddea-4160-b790-1917a64e6cb5",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek that a COS loss is complete"
+					},
+					"response": []
+				},
+				{
+					"name": "CosLoss_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/CosLoss/256c263d-ddea-4160-b790-1917a64e6cb5/Failure",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"CosLoss",
+								"256c263d-ddea-4160-b790-1917a64e6cb5",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek that a COS loss has failed\n\nBody Response expected :\n\n{\n  \"failureDetails\": \"string\"\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CotEvents",
+			"item": [
+				{
+					"name": "CotEvent_Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Cot/9a98c652-7c2f-47d8-9dc7-7abe90c68c1d",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Cot",
+								"9a98c652-7c2f-47d8-9dc7-7abe90c68c1d"
+							]
+						},
+						"description": "Gets the change of tenancy (COT) request event\n\nResponse Example ;\n\n{\n  \"accountId\": 0,\n  \"CotDate\": \"2018-09-12T11:00:29.561Z\",\n  \"smartMeterDetails\": {\n    \"deviceId\": \"string\",\n    \"importMeterPointId\": 0,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  },\n  \"productVersionId\": 0\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "CotEvent_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{DevUrl}}/Smart/Events/Cot/9a98c652-7c2f-47d8-9dc7-7abe90c68c1d/Success",
+							"host": [
+								"{{DevUrl}}"
+							],
+							"path": [
+								"Smart",
+								"Events",
+								"Cot",
+								"9a98c652-7c2f-47d8-9dc7-7abe90c68c1d",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek that a change of tenancy is complete"
+					},
+					"response": []
+				},
+				{
+					"name": "CotEvent_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/Cot/{eventId}/Failure",
+							"path": [
+								"Smart",
+								"Events",
+								"Cot",
+								"{eventId}",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek that a change of tenancy has failed\n\nExpected Body in response :\n\n{\n  \"cotFailureDetails\": \"string\"\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Devices",
+			"item": [
+				{
+					"name": "Get_DeviceId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Devices/{deviceId}",
+							"path": [
+								"Smart",
+								"Devices",
+								"{deviceId}"
+							]
+						},
+						"description": "Retrieves device information from the Ensek CRM\n\nResponse Sample :\n\n{\n  \"deviceId\": \"string\",\n  \"accountId\": 0,\n  \"deviceType\": \"Esme\",\n  \"status\": \"Pending\",\n  \"primaryImportMpan\": \"string\",\n  \"secondaryImportMpan\": \"string\",\n  \"exportMpan\": \"string\",\n  \"ImportMprn\": \"string\",\n  \"hanVariation\": \"SingleBand\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get_DeviceId_AccountId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Accounts/{accountId}/Devices",
+							"path": [
+								"Smart",
+								"Accounts",
+								"{accountId}",
+								"Devices"
+							]
+						},
+						"description": "Retrieves device information from the Ensek CRM for a particular account\n\nResponse Example :\n\n[\n  {\n    \"deviceId\": \"string\",\n    \"accountId\": 0,\n    \"deviceType\": \"Esme\",\n    \"status\": \"Pending\",\n    \"primaryImportMpan\": \"string\",\n    \"secondaryImportMpan\": \"string\",\n    \"exportMpan\": \"string\",\n    \"ImportMprn\": \"string\",\n    \"hanVariation\": \"SingleBand\"\n  }\n]"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MeterPoints",
+			"item": [
+				{
+					"name": "MeterPoint_Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/MeterPoints/{meterPointId}",
+							"path": [
+								"Smart",
+								"MeterPoints",
+								"{meterPointId}"
+							]
+						},
+						"description": "Retrieve meter point information\n\nExample Response :\n\n{\n  \"meterPointId\": 0,\n  \"mpxn\": 0,\n  \"gsp\": \"string\",\n  \"ldz\": \"string\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "MeterPoint_ReadPreference",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/MeterPoints/{meterPointId}/ReadPreferences",
+							"path": [
+								"Smart",
+								"MeterPoints",
+								"{meterPointId}",
+								"ReadPreferences"
+							]
+						},
+						"description": "Retrieve meter point read preferences for smart meter\n\nResponse Example :\n\nDaily"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SmartMeter_InstallationEvents",
+			"item": [
+				{
+					"name": "SMInstallation_Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/SmartMeterInstallation/{eventId}",
+							"path": [
+								"Smart",
+								"Events",
+								"SmartMeterInstallation",
+								"{eventId}"
+							]
+						},
+						"description": "Gets the smart meter installation request event\n\nExample Response :\n\n  \"accountId\": 0,\n  \"meterDetails\": {\n    \"importMeterPointId\": 0,\n    \"secondaryImportMeterPointId\": 0,\n    \"exportMeterPointId\": 0\n  },\n  \"installationDate\": \"2018-09-12T10:56:17.021Z\",\n  \"ProductVersionId\": 0\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "SMInstallation_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/SmartMeterInstallation/{eventId}/Success",
+							"path": [
+								"Smart",
+								"Events",
+								"SmartMeterInstallation",
+								"{eventId}",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek that a smart device has been installed\n\n--Body_Expected :\n{\n  \"installedDevices\": [\n    {\n      \"deviceId\": \"string\",\n      \"accountId\": 0,\n      \"deviceType\": \"Esme\",\n      \"status\": \"Pending\",\n      \"primaryImportMpan\": \"string\",\n      \"secondaryImportMpan\": \"string\",\n      \"exportMpan\": \"string\",\n      \"ImportMprn\": \"string\",\n      \"hanVariation\": \"SingleBand\"\n    }\n  ]\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "SMInstallation_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/SmartMeterInstallation/{eventId}/Failure",
+							"path": [
+								"Smart",
+								"Events",
+								"SmartMeterInstallation",
+								"{eventId}",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek that a smart device installation has failed\n\nExpected Body:\n{\n  \"failureDetails\": \"string\"\n}"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WanAvailability_Events",
+			"item": [
+				{
+					"name": "WAN_CoverageRequest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/WanAvailability/{eventId}",
+							"path": [
+								"Smart",
+								"Events",
+								"WanAvailability",
+								"{eventId}"
+							]
+						},
+						"description": "Retrieves the WAN coverage request event\n\nExample Response :\n\n{\n  \"accountId\": 0\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "WANAvailability_Success",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/Smart/Events/WanAvailability/{eventId}/Success",
+							"path": [
+								"Smart",
+								"Events",
+								"WanAvailability",
+								"{eventId}",
+								"Success"
+							]
+						},
+						"description": "Notify Ensek of WAN availability for an account\n\n--Body_Expected :\n\n{\n  \"uprn\": \"string\",\n  \"postCode\": \"string\",\n  \"houseNumber\": \"string\",\n  \"isWanAvailable\": true,\n  \"anticipatedAvailabilityDate\": \"2018-09-12T10:46:05.853Z\",\n  \"wanTechnology\": \"string\",\n  \"connectivityLikelihood\": \"High\",\n  \"auxiliaryEquipmentRequired\": \"string\",\n  \"additionalInformation\": \"string\"\n}"
+					},
+					"response": []
+				},
+				{
+					"name": "WANAvailability_Failure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/Smart/Events/WanAvailability/{eventId}/Failure",
+							"path": [
+								"Smart",
+								"Events",
+								"WanAvailability",
+								"{eventId}",
+								"Failure"
+							]
+						},
+						"description": "Notify Ensek a WAN availability request has failed\r \r* This is not used to notify Ensek of no WAN coverage, but should be used to notify Ensek of request failures.\r\r--- Body_Expected :\r{\r  \"wanAvailabilityRequestEventId\": \"string\",\r  \"failureDetails\": \"string\"\r}"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "04ddda43-ee34-464b-9dd7-a93c6680d415",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c80931c0-f568-4d1a-9aeb-2d740abd10e2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "56208874-ccf4-40a5-9f93-c5f91b79f8fc",
+			"key": "DevUrl",
+			"value": "https://dev.teamsmart.ignition.ensek.co.uk/api",
+			"type": "string"
+		},
+		{
+			"id": "2938b721-b24b-427b-a1a4-8d0f38ed79e9",
+			"key": "EventId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
